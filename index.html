@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>amount task</title>
+</head>
+<style>
+
+</style>
+<body>
+<section>
+	<form>
+	<label for="amount">enter amount</label>
+	<input type="text" id="amount">
+	<label for="tips">enter ur tips per</label>
+	<input type="text" id="tips">
+	<button type="submit">click</button>
+	<label for="amount.tips">enter amount</label>
+	<input type="text" id="amounttips">
+	<label for="totalamount">enter amount</label>
+	<input type="text" id="totalamount">
+	<div id="results"></div>
+	</form>
+</section>
+<script>
+let form=document.querySelector('form');
+form.addEventListener('submit',function(e){
+e.preventDefault();
+let amo=parseInt(document.getElementById('amount').value);
+let tip=parseInt(document.getElementById('tips').value);
+let amotitips=document.getElementById('amounttips');
+let totalamount=document.getElementById('totalamount');
+let results=document.getElementById('results');
+
+      let ananth=amo*(tip/100);
+	  amotitips.value=ananth;
+	  totalamount.value=amo+ananth;
+if((amo=="") || (amo<=0) || (isNaN(amo))){
+	results.innerHTML='enter the number';
+	results.style.color="red";
+}
+else {
+	results.innerHTML="congrats";
+	results.style.color="green"
+}
+})
+</script>
+</body>
+</html>
